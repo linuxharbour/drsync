@@ -1,0 +1,2 @@
+LABEL,SOURCE,DESTINATION
+linuxserver,rsync@1.2.3.4:/document/,/backup
