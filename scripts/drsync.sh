@@ -1,7 +1,6 @@
 #!/bin/sh
 # drsync.sh
 # developed by Sammy Fung <sammy@sammy.hk>
-ADMIN=root
 timesec=`date +%s`
 logfile=/var/log/drsync-${timesec}
 tasklog=/var/log/drsync-task.log
@@ -16,8 +15,9 @@ then
 else
   echo $$ > ${PIDFILE}
 fi
-for task in `cat ${conffile}`
+for task in `grep ^task= ${conffile}`
 do
+  task=`echo ${task} | sed -e "s/^task=//g"`
   lab=`echo ${task} | cut -f 1 -d ,`
   src=`echo ${task} | cut -f 2 -d ,`
   dst=`echo ${task} | cut -f 3 -d ,`

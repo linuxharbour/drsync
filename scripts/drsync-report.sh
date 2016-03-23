@@ -2,7 +2,12 @@
 # drsync-report.sh
 # developed by Sammy Fung <sammy@sammy.hk>
 # Use space to seperate multiple admin email addresses
-ADMIN_EMAIL="root@localhost"
+conffile=/etc/drsync.conf
+ADMIN_EMAIL=`grep ^admin= ${conffile} | tail -n 1 | sed -e "s/^admin=//"`
+if [ a${admin} == 'a' ];
+then
+  ADMIN_EMAIL='root'
+fi
 CONT="Dear Admin,\n\nReport of drsync backup(s) are attached for your refernece."
 hostname=`hostname -f`
 OLDTASKFILE=/var/log/drsync-task.log

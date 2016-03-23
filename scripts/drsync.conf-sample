@@ -1,2 +1,10 @@
-LABEL,SOURCE,DESTINATION,OPTIONAL_SSHPORT
-linuxserver,rsync@1.2.3.4:/document/,/backup,22
+# Sample of drsync configuration file
+# File Location: /et/drsync.conf
+# Developed by Sammy Fung <sammy@sammy.hk>
+
+# Admin emails for drsync report
+admin='root@localhost nobody@localhost'
+
+# Format of rsync Tasks 
+# LABEL,SOURCE,DESTINATION,OPTIONAL_SSHPORT
+task=linuxserver,rsync@1.2.3.4:/document/,/backup,22
