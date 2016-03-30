@@ -22,7 +22,7 @@ do
   src=`echo ${task} | cut -f 2 -d ,`
   dst=`echo ${task} | cut -f 3 -d ,`
   sshport=`echo ${task} | cut -f 4 -d ,`
-  if [ a${sshport} == 'a' ];
+  if [ "a${sshport}" = "a" ];
   then
     sshport=22
   fi

@@ -15,6 +15,7 @@ TASKFILE=/var/log/drsync-task.log.csv
 TXLFILE=/var/log/drsync-tx-filelist.log.txt
 REPTIME=`date +%s`
 ARCHDIR=/var/log/drsync
+mkdir -p ${ARCHDIR}
 rm /var/log/test*.log
 cat /var/log/drsync-[0-9]*.log > /var/log/test.log
 sed -e "s/^sent .* bytes\/sec//g" -e "s/^total size is .*//g" -e "s/[Rr]sync [SEse].*//g" -e "s/^receiving incremental file list$//g" -e "s/^[A-Z]* (Start|End) .* HKT [0-9]*$//g" /var/log/test.log >> /var/log/test2.log
