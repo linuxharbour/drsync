@@ -6,7 +6,7 @@ drsync is used to better manage rsync schedule with a config file.
 Usage
 -----
 
-$ git clone https://github.com/linuxharbour/drsync    
+$ git clone https://github.com/linuxharbour/drsync.git  
 
 $ cd drsync/scripts; chmod a+ *.sh   
 
